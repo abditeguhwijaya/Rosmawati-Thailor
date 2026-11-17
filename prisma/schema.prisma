@@ -1,0 +1,204 @@
+// Skema database Rosmawati Thailor.
+// Produksi: PostgreSQL.
+// Development lokal memakai scripts/dev-db.mjs.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProductStatus {
+  AVAILABLE
+  UNAVAILABLE
+}
+
+// ==========================================
+// KATEGORI PRODUK
+// ==========================================
+
+model Category {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  slug        String    @unique
+  description String?
+  sortOrder   Int       @default(0)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([sortOrder])
+}
+
+// ==========================================
+// PRODUK
+// ==========================================
+
+model Product {
+  id          String        @id @default(cuid())
+  slug        String        @unique
+  name        String
+  description String        @db.Text
+  price       Int
+  image       String
+  status      ProductStatus @default(AVAILABLE)
+  featured    Boolean       @default(false)
+  categoryId  String
+  category    Category      @relation(fields: [categoryId], references: [id], onDelete: Restrict)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([categoryId])
+  @@index([featured, status])
+  @@index([createdAt])
+}
+
+// ==========================================
+// INFORMASI BUTIK
+// ==========================================
+
+model BoutiqueInfo {
+  id           String   @id @default("main")
+  name         String
+  tagline      String
+  description  String   @db.Text
+  address      String?
+  phone        String?
+  whatsapp     String?
+  instagram    String?
+  openingHours String?
+  updatedAt    DateTime @updatedAt
+}
+
+// ==========================================
+// PENGATURAN HALAMAN BERANDA
+// ==========================================
+
+model HomePageSettings {
+  id String @id @default("main")
+
+  // ----------------------------------------
+  // HERO SECTION
+  // ----------------------------------------
+
+  heroEyebrow String @default("THE ART OF PERSONAL STYLE")
+
+  heroTitle String @default("Elegance is in every stitch.")
+
+  heroDescription String @default("Busana yang dibuat dengan ketelitian, sentuhan personal, dan perhatian pada setiap detail. Karena gaya terbaik adalah yang terasa seperti diri Anda.") @db.Text
+
+  heroImage String @default("https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&q=90")
+
+  heroImagePosition String @default("center 35%")
+
+  heroImageHeight Int @default(680)
+
+  heroPrimaryText String @default("Jelajahi Koleksi")
+
+  heroPrimaryLink String @default("/katalog")
+
+  heroSecondaryText String @default("Cerita kami")
+
+  heroSecondaryLink String @default("#about")
+
+  heroStampTop String @default("MADE")
+
+  heroStampMiddle String @default("WITH")
+
+  heroStampBottom String @default("LOVE")
+
+  // ----------------------------------------
+  // ABOUT SECTION
+  // ----------------------------------------
+
+  aboutEyebrow String @default("OUR STORY & PHILOSOPHY")
+
+  aboutTitle String @default("Lebih dari sekadar pakaian.")
+
+  aboutDescription String @default("Rosmawati Thailor menghadirkan layanan butik dan jahit custom dengan sentuhan personal. Kami percaya bahwa busana yang indah bukan hanya tentang penampilan, tetapi juga kenyamanan dan karakter pemakainya.") @db.Text
+
+  aboutImage String @default("https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1000&q=85")
+
+  aboutImageNote String @default("Crafted with care")
+
+  // Keunggulan pertama
+  aboutValue1Title String @default("Detail Matters")
+
+  aboutValue1Desc String @default("Perhatian pada detail dan kerapian pengerjaan.") @db.Text
+
+  // Keunggulan kedua
+  aboutValue2Title String @default("Made Personal")
+
+  aboutValue2Desc String @default("Busana dapat dikonsultasikan sesuai kebutuhan.") @db.Text
+
+  // Keunggulan ketiga
+  aboutValue3Title String @default("Made with Care")
+
+  aboutValue3Desc String @default("Setiap proses dikerjakan dengan penuh perhatian.") @db.Text
+
+  aboutButtonText String @default("Temukan koleksi kami")
+
+  aboutButtonLink String @default("/katalog")
+
+  // ----------------------------------------
+  // INFORMASI PEMBARUAN
+  // ----------------------------------------
+
+  updatedAt DateTime @updatedAt
+}
+
+// ==========================================
+// ADMIN USER
+// ==========================================
+
+model AdminUser {
+  id                  String         @id @default(cuid())
+  email               String         @unique
+  passwordHash        String
+  name                String?
+  isActive            Boolean        @default(true)
+  failedLoginAttempts Int            @default(0)
+  lockedUntil         DateTime?
+  lastLoginAt         DateTime?
+  passwordChangedAt   DateTime?
+  sessions            AdminSession[]
+  createdAt           DateTime       @default(now())
+  updatedAt           DateTime       @updatedAt
+}
+
+// ==========================================
+// ADMIN SESSION
+// ==========================================
+
+model AdminSession {
+  id        String    @id @default(cuid())
+  tokenHash String    @unique
+  adminId   String
+  admin     AdminUser @relation(fields: [adminId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  ipHash    String?
+  userAgent String?
+  createdAt DateTime  @default(now())
+
+  @@index([adminId])
+  @@index([expiresAt])
+}
+
+// ==========================================
+// ADMIN LOGIN ATTEMPT
+// ==========================================
+
+model AdminLoginAttempt {
+  id        String   @id @default(cuid())
+  email     String
+  ipHash    String
+  success   Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([ipHash, createdAt])
+  @@index([email, createdAt])
+  @@index([createdAt])
+}

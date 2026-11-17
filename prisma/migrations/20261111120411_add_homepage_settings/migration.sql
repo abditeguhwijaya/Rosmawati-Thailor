@@ -1,0 +1,33 @@
+-- CreateTable
+CREATE TABLE "HomePageSettings" (
+    "id" TEXT NOT NULL DEFAULT 'main',
+    "heroEyebrow" TEXT NOT NULL DEFAULT 'THE ART OF PERSONAL STYLE',
+    "heroTitle" TEXT NOT NULL DEFAULT 'Elegance is in every stitch.',
+    "heroDescription" TEXT NOT NULL DEFAULT 'Busana yang dibuat dengan ketelitian, sentuhan personal, dan perhatian pada setiap detail. Karena gaya terbaik adalah yang terasa seperti diri Anda.',
+    "heroImage" TEXT NOT NULL DEFAULT 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1200&q=90',
+    "heroImagePosition" TEXT NOT NULL DEFAULT 'center 35%',
+    "heroImageHeight" INTEGER NOT NULL DEFAULT 680,
+    "heroPrimaryText" TEXT NOT NULL DEFAULT 'Jelajahi Koleksi',
+    "heroPrimaryLink" TEXT NOT NULL DEFAULT '/katalog',
+    "heroSecondaryText" TEXT NOT NULL DEFAULT 'Cerita kami',
+    "heroSecondaryLink" TEXT NOT NULL DEFAULT '#about',
+    "heroStampTop" TEXT NOT NULL DEFAULT 'MADE',
+    "heroStampMiddle" TEXT NOT NULL DEFAULT 'WITH',
+    "heroStampBottom" TEXT NOT NULL DEFAULT 'LOVE',
+    "aboutEyebrow" TEXT NOT NULL DEFAULT 'OUR STORY & PHILOSOPHY',
+    "aboutTitle" TEXT NOT NULL DEFAULT 'Lebih dari sekadar pakaian.',
+    "aboutDescription" TEXT NOT NULL DEFAULT 'Rosmawati Thailor menghadirkan layanan butik dan jahit custom dengan sentuhan personal. Kami percaya bahwa busana yang indah bukan hanya tentang penampilan, tetapi juga kenyamanan dan karakter pemakainya.',
+    "aboutImage" TEXT NOT NULL DEFAULT 'https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1000&q=85',
+    "aboutImageNote" TEXT NOT NULL DEFAULT 'Crafted with care',
+    "aboutValue1Title" TEXT NOT NULL DEFAULT 'Detail Matters',
+    "aboutValue1Desc" TEXT NOT NULL DEFAULT 'Perhatian pada detail dan kerapian pengerjaan.',
+    "aboutValue2Title" TEXT NOT NULL DEFAULT 'Made Personal',
+    "aboutValue2Desc" TEXT NOT NULL DEFAULT 'Busana dapat dikonsultasikan sesuai kebutuhan.',
+    "aboutValue3Title" TEXT NOT NULL DEFAULT 'Made with Care',
+    "aboutValue3Desc" TEXT NOT NULL DEFAULT 'Setiap proses dikerjakan dengan penuh perhatian.',
+    "aboutButtonText" TEXT NOT NULL DEFAULT 'Temukan koleksi kami',
+    "aboutButtonLink" TEXT NOT NULL DEFAULT '/katalog',
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "HomePageSettings_pkey" PRIMARY KEY ("id")
+);
