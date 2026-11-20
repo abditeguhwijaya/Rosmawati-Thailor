@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
@@ -18,7 +18,11 @@
     "admin:hash": "node scripts/hash-admin-password.mjs",
     "verify:fase1": "tsx scripts/verify-fase1.ts",
     "test:e2e": "node scripts/e2e-admin.mjs",
-    "test:e2e:auth": "node scripts/e2e-auth.mjs"
+    "test:e2e:auth": "node scripts/e2e-auth.mjs",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
@@ -27,6 +31,7 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.17",
     "@prisma/client": "^6.19.3",
     "bcryptjs": "^3.0.3",
     "lucide-react": "^0.468.0",
@@ -46,6 +51,7 @@
     "playwright-core": "^1.64.1",
     "prisma": "^6.19.3",
     "tsx": "^4.23.15",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "wrangler": "^4.163.0"
   }
 }

@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Footer, Header } from "@/components/Site";
 import { siteConfig } from "@/lib/site";
@@ -6,8 +6,8 @@ import { siteConfig } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.siteUrl),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
-    template: `%s — ${siteConfig.name}`,
+    default: `${siteConfig.name} â€” ${siteConfig.tagline}`,
+    template: `%s â€” ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -26,20 +26,20 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "/",
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} â€” ${siteConfig.tagline}`,
     description: siteConfig.description,
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — Butik & Jahit Custom`,
+        alt: `${siteConfig.name} â€” Butik & Jahit Custom`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} â€” ${siteConfig.tagline}`,
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },
@@ -70,7 +70,9 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-      </body>
+    </body>
     </html>
   );
 }
+
+

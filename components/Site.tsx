@@ -1,5 +1,6 @@
-
+﻿
 "use client";
+import Image from "next/image";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -49,7 +50,14 @@ export function Header() {
       <header className="header rt-header">
         <div className="rt-header-inner">
           <Link href="/" className="brand rt-brand" aria-label="Rosmawati Thailor Beranda">
-            <span className="monogram" aria-hidden="true">R</span>
+            <Image
+              src="/images/logo-rosmawati.png"
+              alt="Logo Rosmawati Thailor"
+              width={100}
+              height={100}
+              priority
+              className="rt-brand-logo"
+/>
             <span className="rt-brand-copy">
               <b>{siteConfig.name}</b>
               <small>{siteConfig.tagline.toUpperCase()}</small>
@@ -137,47 +145,81 @@ export function Footer() {
     `Halo ${siteConfig.name}, saya ingin bertanya tentang layanan butik.`
   );
 
+  const mapsUrl =
+    "https://www.google.com/maps?q=-8.6064763,116.5559239&z=17&hl=id";
+
   return (
-    <footer className="footer rt-footer" id="contact">
-      <div className="rt-footer-grid">
-        <div className="rt-footer-brand">
-          <Link href="/" className="brand rt-brand">
-            <span className="monogram" aria-hidden="true">R</span>
-            <span className="rt-brand-copy">
-              <b>{siteConfig.name}</b>
-              <small>{siteConfig.tagline.toUpperCase()}</small>
+    <footer className="rt-editorial-footer" id="contact">
+      <div className="rt-editorial-footer-inner">
+
+        {/* BRAND */}
+        <div className="rt-editorial-brand">
+          <Link href="/" className="rt-editorial-logo">
+            <Image
+              src="/images/logo-rosmawati.png"
+              alt="Rosmawati Thailor"
+              width={90}
+              height={90}
+              className="rt-editorial-logo-image"
+            />
+
+            <span className="rt-editorial-brand-text">
+              <strong>{siteConfig.name}</strong>
+              <small>MADE WITH CARE</small>
             </span>
           </Link>
 
-          <p>
-            Setiap jahitan memiliki cerita. Busana personal yang dibuat
-            dengan sepenuh hati dan perhatian pada setiap detail.
+          <p className="rt-editorial-description">
+            Setiap jahitan memiliki cerita. Busana personal yang
+            dirancang dengan perhatian, ketelitian, dan keindahan
+            dalam setiap detail.
           </p>
 
-          <span className="rt-footer-motto">
+          <span className="rt-editorial-motto">
             Elegance is in every stitch.
           </span>
         </div>
 
-        <div className="rt-footer-column">
-          <b>Jelajahi</b>
-          <Link href="/">Beranda</Link>
-          <Link href="/katalog">Koleksi</Link>
-          <Link href="/#about">Tentang Kami</Link>
-          <Link href="/#contact">Hubungi Kami</Link>
+        {/* NAVIGASI */}
+        <div className="rt-editorial-column">
+          <h3>Explore</h3>
+
+          <Link href="/" className="rt-editorial-link">
+            <Image src="/images/icon-beranda.png" alt="" width={23} height={23} />
+            <span>Beranda</span>
+          </Link>
+
+          <Link href="/katalog" className="rt-editorial-link">
+            <Image src="/images/icon-koleksi.png" alt="" width={23} height={23} />
+            <span>Koleksi</span>
+          </Link>
+
+          <Link href="/#about" className="rt-editorial-link">
+            <Image src="/images/icon-tentang.png" alt="" width={23} height={23} />
+            <span>Tentang Kami</span>
+          </Link>
+
+          <Link href="/#contact" className="rt-editorial-link">
+            <Image src="/images/icon-kontak.png" alt="" width={23} height={23} />
+            <span>Hubungi Kami</span>
+          </Link>
         </div>
 
-        <div className="rt-footer-column">
-          <b>Hubungi Kami</b>
+        {/* ATELIER */}
+        <div className="rt-editorial-column rt-editorial-contact">
+          <h3>Atelier</h3>
 
-          {whatsappUrl ? (
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <MessageCircle size={16} />
-              WhatsApp
-              <ArrowUpRight size={13} />
+          {whatsappUrl && (
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rt-editorial-link"
+            >
+              <Image src="/images/icon-whatsapp.png" alt="" width={25} height={25} />
+              <span>WhatsApp</span>
+              <span className="rt-editorial-arrow">↗</span>
             </a>
-          ) : (
-            <span className="footer-muted">WhatsApp belum diatur</span>
           )}
 
           {siteConfig.instagramUrl && (
@@ -185,24 +227,62 @@ export function Footer() {
               href={siteConfig.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
+              className="rt-editorial-link"
             >
-              <Instagram size={16} />
-              Instagram
-              <ArrowUpRight size={13} />
+              <Image src="/images/icon-instagram.png" alt="" width={25} height={25} />
+              <span>Instagram</span>
+              <span className="rt-editorial-arrow">↗</span>
             </a>
           )}
 
-          {siteConfig.address && <span>{siteConfig.address}</span>}
-          {siteConfig.openingHours && <span>{siteConfig.openingHours}</span>}
+          <a
+            href={mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rt-editorial-link rt-editorial-location-link"
+          >
+            <Image src="/images/icon-lokasi.png" alt="" width={25} height={25} />
+            <span>Lokasi Atelier</span>
+            <span className="rt-editorial-arrow">↗</span>
+          </a>
+
+          <p className="rt-editorial-address">
+            Dasan Lendang, Desa Lenek Baru,
+            Kecamatan Lenek, Lombok Timur
+          </p>
+        </div>
+
+        {/* STAY IN TOUCH */}
+        <div className="rt-editorial-column rt-editorial-newsletter">
+          <h3>Stay in touch</h3>
+
+          <p>
+            Cerita, inspirasi, dan kreasi busana yang dibuat
+            dengan perhatian pada setiap detail.
+          </p>
+
+          <p className="rt-editorial-newsletter-quote">
+            Temukan gaya yang mencerminkan diri Anda.
+          </p>
+
+          <Link href="/#contact" className="rt-editorial-consult">
+            Konsultasikan busana Anda
+            <span>↗</span>
+          </Link>
         </div>
       </div>
 
-      <div className="rt-footer-bottom">
+      {/* COPYRIGHT */}
+      <div className="rt-editorial-bottom">
         <span>
           © {new Date().getFullYear()} {siteConfig.name}
         </span>
-        <span>Made with care, crafted with love.</span>
+
+        <span className="rt-editorial-bottom-note">
+          Made with care, crafted with love.
+        </span>
       </div>
     </footer>
   );
 }
+

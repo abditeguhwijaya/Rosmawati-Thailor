@@ -2,6 +2,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   ExternalLink,
@@ -113,7 +114,7 @@ export default function AdminSidebar({
             className="ad-brand-link"
             aria-label={`${siteConfig.name} — Beranda`}
           >
-            <span className="ad-brand-mono">R</span>
+            <Image src="/images/logo-rosmawati.png" alt="Logo Rosmawati Thailor" width={64} height={64} className="ad-brand-logo" priority />
 
             <span className="ad-brand-text">
               <strong>ROSMawati</strong>

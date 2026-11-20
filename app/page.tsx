@@ -1,5 +1,4 @@
-
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import {
@@ -7,7 +6,6 @@ import {
   ArrowUpRight,
   Heart,
   Ruler,
-  Sparkles,
   Scissors,
   MessageCircle,
   Instagram,
@@ -190,8 +188,8 @@ export default async function Home() {
           </div>
 
           <div className="rt-hero-signature">
-            <span>✳</span>
-            Thoughtfully tailored · Made just for you
+            <span>âœ¦</span>
+            Thoughtfully tailored âœ¦ Made just for you
           </div>
         </div>
 
@@ -223,7 +221,7 @@ export default async function Home() {
           </div>
 
           <div className="rt-hero-caption">
-            <span>COLLECTION Nº 01</span>
+            <span>COLLECTION NÃ‚Âº 01</span>
             <span>TIMELESS FORM</span>
           </div>
 
@@ -235,10 +233,10 @@ export default async function Home() {
 
       {/* BRAND TICKER */}
       <div className="rt-ticker" aria-label="Nilai butik">
-        <span>✳ Detail yang diperhatikan</span>
-        <span>✳ Dibuat dengan teliti</span>
-        <span>✳ Sentuhan personal</span>
-        <span>✳ Pesan dengan mudah</span>
+        <span>âœ¦ Detail yang diperhatikan</span>
+        <span>âœ¦ Dibuat dengan teliti</span>
+        <span>âœ¦ Sentuhan personal</span>
+        <span>âœ¦ Pesan dengan mudah</span>
       </div>
 
       {/* COLLECTION */}
@@ -306,7 +304,7 @@ export default async function Home() {
             <div className="rt-values">
               <div className="rt-value-item">
                 <span className="rt-value-icon">
-                  <Sparkles size={21} />
+                  <Scissors size={21} />
                 </span>
                 <div>
                   <b>
@@ -390,7 +388,7 @@ export default async function Home() {
         <div className="rt-craft-grid">
           <div className="rt-craft-card">
             <span>01</span>
-            <Sparkles size={24} />
+            <Scissors size={24} />
 
             <h3>Detail yang diperhatikan</h3>
 
@@ -470,6 +468,7 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* LOCATION SECTION */}
       {/* CONTACT CTA */}
       <section className="rt-contact-cta">
         <div className="rt-contact-decoration">R</div>
@@ -528,3 +527,7 @@ export default async function Home() {
     </main>
   );
 }
+
+
+
+

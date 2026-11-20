@@ -3511,3 +3511,260 @@ textarea.ad-input {
     padding: 0 !important;
   }
 }
+
+/* ==========================================
+   ROSMAWATI THAILOR - HOME SETTINGS SPACING
+   Tampilan lebih lega dan seimbang
+   ========================================== */
+
+.ad-home-settings .ad-card-body {
+  gap: 24px;
+}
+
+.ad-home-settings .ad-form-row {
+  column-gap: 24px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+.ad-home-settings .ad-field {
+  gap: 9px;
+}
+
+.ad-home-settings .ad-field-label,
+.ad-home-settings .ad-field > span {
+  line-height: 1.5;
+}
+
+.ad-home-settings .ad-input {
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 11px 14px;
+  border-radius: 10px;
+}
+
+.ad-home-settings textarea.ad-input {
+  min-height: 120px;
+  line-height: 1.7;
+}
+
+.ad-home-settings .ad-home-image {
+  gap: 14px;
+  padding-top: 4px;
+}
+
+.ad-home-settings .ad-home-image-preview {
+  max-width: 560px;
+  height: 240px;
+  border-radius: 12px;
+}
+
+.ad-home-settings .ad-home-file {
+  padding: 11px 17px;
+  border-radius: 9px;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.ad-home-settings .ad-home-file:hover {
+  background: #f8f1ef;
+  border-color: #b08d68;
+}
+
+.ad-home-settings .ad-home-save {
+  padding-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .ad-home-settings .ad-card-body {
+    gap: 20px;
+  }
+
+  .ad-home-settings .ad-form-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 18px;
+  }
+
+  .ad-home-settings .ad-home-image-preview {
+    height: 180px;
+  }
+}
+/* ==========================================
+   ROSMAWATI THAILOR - ACCOUNT PAGE REFINEMENT
+   ========================================== */
+
+.ad-account {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.ad-account > .ad-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.ad-account > .ad-card:not(.ad-account-profile) {
+  padding: 24px;
+}
+
+.ad-account > .ad-card .ad-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ad-account .ad-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 3px;
+}
+
+.ad-account .ad-card-head-text {
+  min-width: 0;
+}
+
+.ad-account .ad-card-head p {
+  margin-top: 9px;
+  line-height: 1.7;
+}
+
+.ad-account .ad-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  min-width: 0;
+}
+
+.ad-account .ad-field > span:first-child {
+  color: var(--ad-ink);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.ad-account .ad-password {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.ad-account .ad-password .ad-input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  box-sizing: border-box;
+  padding: 12px 48px 12px 15px;
+  border-radius: 10px;
+}
+
+.ad-account .ad-password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ad-muted);
+  cursor: pointer;
+}
+
+.ad-account .ad-password-toggle:hover {
+  color: var(--ad-burgundy);
+}
+
+.ad-account .ad-field-error {
+  margin-top: 1px;
+  line-height: 1.5;
+}
+
+.ad-account .auth-error {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.ad-account .ad-account-submit {
+  align-self: flex-start;
+  min-height: 44px;
+  margin-top: 0;
+  padding: 11px 19px;
+  border-radius: 9px;
+}
+
+.ad-account-profile {
+  height: 100%;
+}
+
+.ad-account-meta-row {
+  flex-wrap: wrap;
+}
+
+.ad-account-meta-row b {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+  .ad-account {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ad-account > .ad-card:not(.ad-account-profile) {
+    padding: 19px;
+  }
+
+  .ad-account > .ad-card .ad-form {
+    gap: 17px;
+  }
+
+  .ad-account .ad-account-submit {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ad-account-meta-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .ad-account-meta-row b {
+    text-align: left;
+  }
+}
+/* ==========================================
+   ROSMAWATI THAILOR - SIDEBAR OFFICIAL LOGO
+   ========================================== */
+
+.ad-brand-link {
+  gap: 11px;
+}
+
+.ad-brand-logo {
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+}
+
+.ad-root.ad-collapsed .ad-brand-logo {
+  width: 42px;
+  height: 42px;
+  flex-basis: 42px;
+}

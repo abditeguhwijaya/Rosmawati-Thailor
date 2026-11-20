@@ -25,7 +25,7 @@ export default async function Katalog() {
 
         <div className="rt-catalog-divider">
           <span />
-          <span className="rt-catalog-divider-symbol">✳</span>
+          <span className="rt-catalog-divider-symbol">·</span>
           <span />
         </div>
 
