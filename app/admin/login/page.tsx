@@ -78,26 +78,27 @@ export default async function AdminLoginPage({
   return (
     <main
       id="main-content"
+      className="ad-login"
       style={{
         minHeight: "100vh",
         width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "32px 20px",
-        background: "#FBF8F4",
+        padding: "40px 20px",
+        background: "radial-gradient(ellipse at 50% 20%, #FAF6F3 0%, #F3ECE7 100%)",
       }}
     >
       <section
         aria-label="Login administrator"
         style={{
           width: "100%",
-          maxWidth: "440px",
+          maxWidth: "450px",
           background: "#FFFFFF",
-          border: "1px solid #EAE0DC",
-          borderRadius: "18px",
-          padding: "36px",
-          boxShadow: "0 18px 55px rgba(65, 40, 43, 0.09)",
+          border: "1px solid rgba(201, 166, 161, 0.4)",
+          borderRadius: "22px",
+          padding: "42px 38px 36px",
+          boxShadow: "0 22px 65px -15px rgba(56, 39, 44, 0.12), 0 2px 8px rgba(56, 39, 44, 0.04)",
         }}
       >
         <header
@@ -114,20 +115,24 @@ export default async function AdminLoginPage({
               flexDirection: "column",
               alignItems: "center",
               textDecoration: "none",
-              color: "#80565B",
+              color: "#3D2B30",
               gap: "10px",
             }}
           >
             <span
               style={{
-                width: "54px",
-                height: "54px",
+                width: "56px",
+                height: "56px",
                 display: "grid",
                 placeItems: "center",
-                border: "1px solid #C9A6A1",
+                border: "1.5px solid #C9A6A1",
                 borderRadius: "50%",
+                background: "linear-gradient(135deg, #FCFAF9 0%, #F5ECE8 100%)",
                 fontFamily: "Georgia, serif",
-                fontSize: "30px",
+                fontSize: "28px",
+                fontWeight: 600,
+                color: "#8A4F5D",
+                boxShadow: "0 4px 14px rgba(138, 79, 93, 0.12)",
               }}
             >
               R
@@ -136,36 +141,41 @@ export default async function AdminLoginPage({
             <strong
               style={{
                 fontFamily: "Georgia, serif",
-                fontSize: "19px",
-                letterSpacing: "2px",
-                fontWeight: 500,
+                fontSize: "18px",
+                letterSpacing: "2.5px",
+                fontWeight: 600,
+                color: "#38272C",
               }}
             >
               {siteConfig.name.toUpperCase()}
             </strong>
           </Link>
 
-          <p
-            style={{
-              marginTop: "12px",
-              marginBottom: "0",
-              color: "#9A8581",
-              fontSize: "10px",
-              letterSpacing: "2.5px",
-              fontWeight: 600,
-            }}
-          >
-            ADMINISTRATOR ACCESS
-          </p>
+          <div style={{ marginTop: "12px" }}>
+            <span
+              style={{
+                display: "inline-block",
+                padding: "3px 12px",
+                borderRadius: "999px",
+                background: "#F6EEF0",
+                color: "#8A4F5D",
+                fontSize: "10px",
+                letterSpacing: "2px",
+                fontWeight: 700,
+              }}
+            >
+              ADMINISTRATOR ACCESS
+            </span>
+          </div>
 
           <h1
             style={{
-              marginTop: "25px",
+              marginTop: "22px",
               marginBottom: "8px",
-              color: "#493638",
+              color: "#38272C",
               fontFamily: "Georgia, serif",
-              fontSize: "29px",
-              fontWeight: 400,
+              fontSize: "28px",
+              fontWeight: 500,
             }}
           >
             Selamat Datang
@@ -174,12 +184,12 @@ export default async function AdminLoginPage({
           <p
             style={{
               margin: 0,
-              color: "#8B7774",
-              fontSize: "13px",
-              lineHeight: 1.7,
+              color: "#7E6D72",
+              fontSize: "13.5px",
+              lineHeight: 1.6,
             }}
           >
-            Masuk untuk mengelola website butik Anda.
+            Masuk untuk mengelola butik dan katalog busana Anda.
           </p>
         </header>
 
@@ -190,18 +200,20 @@ export default async function AdminLoginPage({
 
         <div
           style={{
-            marginTop: "25px",
-            paddingTop: "20px",
-            borderTop: "1px solid #F0E9E5",
+            marginTop: "28px",
+            paddingTop: "22px",
+            borderTop: "1px solid #F2EBE8",
             textAlign: "center",
           }}
         >
           <Link
             href="/"
             style={{
-              color: "#80565B",
+              color: "#8A4F5D",
               textDecoration: "none",
-              fontSize: "12px",
+              fontSize: "12.5px",
+              fontWeight: 500,
+              transition: "color 0.2s ease",
             }}
           >
             ← Kembali ke website
@@ -209,11 +221,12 @@ export default async function AdminLoginPage({
 
           <p
             style={{
-              marginTop: "15px",
+              marginTop: "16px",
               marginBottom: 0,
-              color: "#B0A19C",
-              fontSize: "10px",
-              letterSpacing: "1px",
+              color: "#B2A3A0",
+              fontSize: "10.5px",
+              letterSpacing: "1.5px",
+              fontWeight: 500,
             }}
           >
             MADE WITH CARE © {new Date().getFullYear()}

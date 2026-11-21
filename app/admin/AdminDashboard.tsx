@@ -82,8 +82,8 @@ function BannerArt() {
           x2="0"
           y2="1"
         >
-          <stop offset="0%" stopColor="#c99ba5" stopOpacity="0.42" />
-          <stop offset="100%" stopColor="#c99ba5" stopOpacity="0.08" />
+          <stop offset="0%" stopColor="#754653" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#754653" stopOpacity="0.05" />
         </linearGradient>
       </defs>
 
@@ -91,49 +91,56 @@ function BannerArt() {
         cx="130"
         cy="130"
         r="104"
-        stroke="rgba(201,155,165,0.3)"
+        stroke="#C5A16E"
         strokeWidth="1.2"
         strokeDasharray="3 7"
+        strokeOpacity="0.55"
       />
 
       <path
         d="M130 34 L112 62 C110 70 116 78 124 80 L98 196 C96 206 104 214 114 210 L130 202 L146 210 C156 214 164 206 162 196 L136 80 C144 78 150 70 148 62 L130 34 Z"
         fill="url(#ad-banner-gown)"
-        stroke="rgba(201,155,165,0.6)"
+        stroke="#754653"
         strokeWidth="1.6"
         strokeLinejoin="round"
+        strokeOpacity="0.45"
       />
 
       <path
         d="M62 170 C70 206 98 230 132 230 C166 230 192 208 200 176"
-        stroke="rgba(247,242,239,0.5)"
+        stroke="#C5A16E"
         strokeWidth="2"
         strokeDasharray="10 6"
         strokeLinecap="round"
+        strokeOpacity="0.65"
       />
 
       <path
         d="M178 78 L206 50"
-        stroke="rgba(247,242,239,0.65)"
+        stroke="#754653"
         strokeWidth="2.4"
         strokeLinecap="round"
+        strokeOpacity="0.65"
       />
 
       <circle
         cx="178"
         cy="78"
         r="4"
-        fill="rgba(247,242,239,0.65)"
+        fill="#754653"
+        fillOpacity="0.65"
       />
 
       <path
         d="M62 74 L66 84 L76 88 L66 92 L62 102 L58 92 L48 88 L58 84 Z"
-        fill="rgba(201,155,165,0.55)"
+        fill="#C5A16E"
+        fillOpacity="0.75"
       />
 
       <path
         d="M204 128 L207 135 L214 138 L207 141 L204 148 L201 141 L194 138 L201 135 Z"
-        fill="rgba(201,155,165,0.4)"
+        fill="#C5A16E"
+        fillOpacity="0.65"
       />
     </svg>
   );

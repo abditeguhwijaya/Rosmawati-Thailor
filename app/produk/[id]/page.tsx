@@ -7,10 +7,10 @@ import {
   ArrowLeft,
   ArrowUpRight,
   Check,
-  MessageCircle,
   Ruler,
   Sparkles,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/Icons";
 
 import ProductCard from "@/components/ProductCard";
 import { formatIDR } from "@/lib/format";
@@ -161,7 +161,7 @@ export default async function Detail({ params }: DetailProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={18} />
                 Pesan melalui WhatsApp
                 <ArrowUpRight size={17} />
               </a>
@@ -170,7 +170,7 @@ export default async function Detail({ params }: DetailProps) {
                 className="rt-detail-order-button disabled"
                 aria-disabled="true"
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={18} />
                 {product.available
                   ? "WhatsApp belum dikonfigurasi"
                   : "Produk belum tersedia"}

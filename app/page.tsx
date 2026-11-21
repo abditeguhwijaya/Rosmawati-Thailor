@@ -7,10 +7,9 @@ import {
   Heart,
   Ruler,
   Scissors,
-  MessageCircle,
-  Instagram,
   CheckCircle2,
 } from "lucide-react";
+import { WhatsAppIcon, InstagramIcon } from "@/components/Icons";
 
 import LoadingScreen from "@/components/LoadingScreen";
 import ProductCard from "@/components/ProductCard";
@@ -188,8 +187,7 @@ export default async function Home() {
           </div>
 
           <div className="rt-hero-signature">
-            <span>âœ¦</span>
-            Thoughtfully tailored âœ¦ Made just for you
+            Thoughtfully tailored Made just for you
           </div>
         </div>
 
@@ -495,7 +493,7 @@ export default async function Home() {
                 rel="noopener noreferrer"
                 className="rt-button-primary"
               >
-                <MessageCircle size={17} />
+                <WhatsAppIcon size={17} />
                 Konsultasi via WhatsApp
                 <ArrowUpRight size={15} />
               </a>
@@ -516,7 +514,7 @@ export default async function Home() {
                 rel="noopener noreferrer"
                 className="rt-button-outline"
               >
-                <Instagram size={17} />
+                <InstagramIcon size={17} />
                 Kunjungi Instagram
                 <ArrowUpRight size={15} />
               </a>

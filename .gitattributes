@@ -1,0 +1,19 @@
+# Enforce LF line endings for all text files across Windows, Linux, and macOS
+* text=auto eol=lf
+
+# Explicit source code files
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.svg text eol=lf
+
+# Binary media files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary
+*.webp binary

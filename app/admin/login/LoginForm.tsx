@@ -64,6 +64,7 @@ export default function LoginForm({
             maxLength={254}
             required
             autoFocus
+            placeholder="admin@rosmawatithailor.com"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             aria-invalid={Boolean(emailError)}
@@ -90,6 +91,7 @@ export default function LoginForm({
               autoComplete="current-password"
               maxLength={200}
               required
+              placeholder="Masukkan password admin"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               aria-invalid={Boolean(passwordError)}

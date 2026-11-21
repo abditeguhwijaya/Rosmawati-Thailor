@@ -359,6 +359,7 @@ export default function HomePageSettingsForm({
             <label>Gambar Hero</label>
 
             <div className="ad-home-image-preview">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
                   heroPreview || settings.heroImage
@@ -531,6 +532,7 @@ export default function HomePageSettingsForm({
             <label>Gambar Tentang Kami</label>
 
             <div className="ad-home-image-preview">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={
                   aboutPreview || settings.aboutImage

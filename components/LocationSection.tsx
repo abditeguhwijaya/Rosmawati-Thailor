@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import Link from "next/link";
+import { WhatsAppIcon, InstagramIcon, LocationPinIcon } from "./Icons";
 
 export default function LocationSection() {
   const mapsUrl = "https://www.google.com/maps?q=-8.6064763,116.5559239&z=17&hl=id";
@@ -47,20 +48,26 @@ export default function LocationSection() {
             href="https://wa.me/6283835311747"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: "7px" }}
           >
-            WhatsApp ↗
+            <WhatsAppIcon size={16} />
+            <span>WhatsApp ↗</span>
           </a>
 
           <a
             href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: "7px" }}
           >
-            Instagram ↗
+            <InstagramIcon size={16} />
+            <span>Instagram ↗</span>
           </a>
 
           <div className="rt-location-address">
-            <span className="rt-location-icon">⌖</span>
+            <span className="rt-location-icon">
+              <LocationPinIcon size={18} />
+            </span>
 
             <div>
               <strong>Lokasi Atelier</strong>

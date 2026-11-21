@@ -32,6 +32,10 @@ Thumbs.db
 
 # File cadangan lokal
 app/loading.tsx.bak
+*.backup*
+backup-*
+*.bak
+globals-footer-fix-*.css
 
 # OpenNext
 .open-next

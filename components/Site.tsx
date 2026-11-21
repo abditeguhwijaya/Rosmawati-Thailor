@@ -8,10 +8,17 @@ import { useEffect, useState } from "react";
 import {
   Menu,
   X,
-  Instagram,
-  MessageCircle,
   ArrowUpRight,
 } from "lucide-react";
+import {
+  WhatsAppIcon,
+  InstagramIcon,
+  LocationPinIcon,
+  HomeIcon,
+  DressIcon,
+  AboutUsersIcon,
+  PhoneContactIcon,
+} from "./Icons";
 import { getWhatsAppUrl, siteConfig } from "@/lib/site";
 
 export function Header() {
@@ -91,7 +98,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 aria-label="Instagram Rosmawati Thailor"
               >
-                <Instagram size={18} />
+                <InstagramIcon size={18} />
               </a>
             )}
 
@@ -103,7 +110,7 @@ export function Header() {
                 rel="noopener noreferrer"
                 aria-label="WhatsApp Rosmawati Thailor"
               >
-                <MessageCircle size={18} />
+                <WhatsAppIcon size={18} />
               </a>
             )}
 
@@ -154,13 +161,13 @@ export function Footer() {
 
         {/* BRAND */}
         <div className="rt-editorial-brand">
-          <Link href="/" className="rt-editorial-logo">
+          <Link href="/" className="rt-editorial-brand-link" aria-label="Rosmawati Thailor">
             <Image
               src="/images/logo-rosmawati.png"
               alt="Rosmawati Thailor"
-              width={90}
-              height={90}
-              className="rt-editorial-logo-image"
+              width={68}
+              height={68}
+              className="rt-editorial-logo"
             />
 
             <span className="rt-editorial-brand-text">
@@ -185,22 +192,22 @@ export function Footer() {
           <h3>Explore</h3>
 
           <Link href="/" className="rt-editorial-link">
-            <Image src="/images/icon-beranda.png" alt="" width={23} height={23} />
+            <HomeIcon size={18} className="rt-editorial-link-icon" />
             <span>Beranda</span>
           </Link>
 
           <Link href="/katalog" className="rt-editorial-link">
-            <Image src="/images/icon-koleksi.png" alt="" width={23} height={23} />
+            <DressIcon size={18} className="rt-editorial-link-icon" />
             <span>Koleksi</span>
           </Link>
 
           <Link href="/#about" className="rt-editorial-link">
-            <Image src="/images/icon-tentang.png" alt="" width={23} height={23} />
+            <AboutUsersIcon size={18} className="rt-editorial-link-icon" />
             <span>Tentang Kami</span>
           </Link>
 
           <Link href="/#contact" className="rt-editorial-link">
-            <Image src="/images/icon-kontak.png" alt="" width={23} height={23} />
+            <PhoneContactIcon size={18} className="rt-editorial-link-icon" />
             <span>Hubungi Kami</span>
           </Link>
         </div>
@@ -216,7 +223,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="rt-editorial-link"
             >
-              <Image src="/images/icon-whatsapp.png" alt="" width={25} height={25} />
+              <WhatsAppIcon size={18} className="rt-editorial-link-icon" />
               <span>WhatsApp</span>
               <span className="rt-editorial-arrow">↗</span>
             </a>
@@ -229,7 +236,7 @@ export function Footer() {
               rel="noopener noreferrer"
               className="rt-editorial-link"
             >
-              <Image src="/images/icon-instagram.png" alt="" width={25} height={25} />
+              <InstagramIcon size={18} className="rt-editorial-link-icon" />
               <span>Instagram</span>
               <span className="rt-editorial-arrow">↗</span>
             </a>
@@ -241,7 +248,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="rt-editorial-link rt-editorial-location-link"
           >
-            <Image src="/images/icon-lokasi.png" alt="" width={25} height={25} />
+            <LocationPinIcon size={18} className="rt-editorial-link-icon" />
             <span>Lokasi Atelier</span>
             <span className="rt-editorial-arrow">↗</span>
           </a>

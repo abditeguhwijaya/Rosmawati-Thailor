@@ -8,13 +8,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+:root,
 .ad-root,
 .ad-login {
   --ad-plum: #38272c;
   --ad-plum-deep: #2e1f24;
-  --ad-burgundy: #8a4f5d;
-  --ad-burgundy-strong: #7a4552;
-  --ad-rose: #c99ba5;
+  --ad-burgundy: #754653;
+  --ad-burgundy-strong: #603744;
+  --ad-rose: #D9AEB8;
   --ad-rose-tint: #f5e7ea;
   --ad-beige: #f7f2ef;
   --ad-white: #ffffff;
@@ -27,7 +28,7 @@
   --ad-success-tint: #e9f3ed;
   --ad-danger: #d9535d;
   --ad-danger-tint: #fbedef;
-  --ad-gold: #b08d68;
+  --ad-gold: #C5A16E;
   --ad-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --ad-sidebar-w: 268px;
   --ad-radius-card: 16px;
@@ -38,6 +39,7 @@
 
 /* ---------- Dasar ---------- */
 
+:root,
 .ad-root,
 .ad-login {
   font-family: var(--ad-font);
@@ -193,13 +195,13 @@
   flex-direction: column;
   gap: 18px;
   padding: 22px 16px;
-  background: linear-gradient(180deg, #3b2a2f 0%, var(--ad-plum) 55%, #332328 100%);
-  color: #ecdfe3;
-  border-right: 1px solid rgba(201, 155, 165, 0.16);
+  background: linear-gradient(180deg, #FBF6F7 0%, #F5EAEF 60%, #EFE1E6 100%);
+  color: #755a62;
+  border-right: 1px solid rgba(197, 161, 110, 0.4);
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
-  scrollbar-color: rgba(201, 155, 165, 0.28) transparent;
+  scrollbar-color: rgba(197, 161, 110, 0.35) transparent;
 }
 
 .ad-sidebar::-webkit-scrollbar {
@@ -207,7 +209,7 @@
 }
 
 .ad-sidebar::-webkit-scrollbar-thumb {
-  background: rgba(201, 155, 165, 0.28);
+  background: rgba(197, 161, 110, 0.35);
   border-radius: 999px;
 }
 
@@ -226,10 +228,10 @@
   display: grid;
   place-items: center;
   border-radius: 13px;
-  background: linear-gradient(135deg, var(--ad-burgundy) 0%, #6d3f4b 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18),
-    0 10px 22px -12px rgba(0, 0, 0, 0.55);
-  color: var(--ad-white);
+  background: #D9AEB8;
+  border: 1px solid #C5A16E;
+  box-shadow: 0 4px 12px -4px rgba(117, 70, 83, 0.25);
+  color: #754653;
   font-weight: 800;
   font-size: 19px;
   letter-spacing: 0.5px;
@@ -239,10 +241,11 @@
   min-width: 0;
 }
 
+.ad-brand-text strong,
 .ad-brand-text b {
   display: block;
-  color: var(--ad-white);
-  font-size: 12.5px;
+  color: #754653;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 1.6px;
   white-space: nowrap;
@@ -251,7 +254,7 @@
 .ad-brand-text small {
   display: block;
   margin-top: 3px;
-  color: var(--ad-rose);
+  color: #9b7680;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 2.4px;
@@ -259,14 +262,20 @@
 }
 
 .ad-side-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 12px;
   margin-top: 10px;
-  color: rgba(201, 155, 165, 0.62);
+  color: #9b7680;
   font-size: 9.5px;
   font-weight: 700;
   letter-spacing: 2.2px;
   white-space: nowrap;
+}
+
+.ad-side-label svg {
+  color: #C5A16E;
 }
 
 .ad-sidenav {
@@ -280,33 +289,58 @@
   gap: 12px;
   padding: 11px 13px;
   border-radius: 11px;
-  color: #cbb7bc;
+  border: 1px solid transparent;
+  color: #755a62;
   font-size: 13.5px;
   font-weight: 500;
   white-space: nowrap;
-  transition: background-color 0.16s ease, color 0.16s ease;
+  transition: all 0.18s ease;
 }
 
 .ad-sidelink svg {
   flex: none;
+  color: #8c6a73;
+  transition: color 0.18s ease, transform 0.18s ease;
 }
 
 .ad-sidelink:hover {
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--ad-white);
+  background: #F3E3E6;
+  color: #754653;
+  border-color: rgba(197, 161, 110, 0.45);
+  transform: translateX(2px);
+}
+
+.ad-sidelink:hover svg {
+  color: #754653;
+  stroke: #754653;
 }
 
 .ad-sidelink--active {
-  background: var(--ad-burgundy);
-  color: var(--ad-white);
-  font-weight: 600;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14),
-    0 10px 22px -14px rgba(138, 79, 93, 0.9);
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px -3px rgba(117, 70, 83, 0.25) !important;
+  transform: none !important;
+}
+
+.ad-sidelink--active svg {
+  color: #754653 !important;
+  stroke: #754653 !important;
 }
 
 .ad-sidelink--active:hover {
-  background: var(--ad-burgundy-strong);
-  color: var(--ad-white);
+  background: #EBCFD5 !important;
+  color: #754653 !important;
+  border-color: #C5A16E !important;
+}
+
+.ad-sidelink-indicator {
+  margin-left: auto;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #754653;
 }
 
 .ad-sidefoot {
@@ -314,7 +348,7 @@
   display: grid;
   gap: 10px;
   padding-top: 18px;
-  border-top: 1px solid rgba(201, 155, 165, 0.16);
+  border-top: 1px solid rgba(197, 161, 110, 0.3);
 }
 
 .ad-side-profile {
@@ -323,7 +357,9 @@
   gap: 11px;
   padding: 9px 11px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border: 1px solid rgba(197, 161, 110, 0.35);
+  box-shadow: 0 2px 6px rgba(117, 70, 83, 0.05);
   min-width: 0;
 }
 
@@ -334,9 +370,10 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(201, 155, 165, 0.24);
-  color: var(--ad-white);
-  font-size: 12px;
+  background: #D9AEB8;
+  color: #754653;
+  border: 1px solid #C5A16E;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
@@ -345,9 +382,10 @@
   min-width: 0;
 }
 
+.ad-side-profile-text strong,
 .ad-side-profile-text b {
   display: block;
-  color: var(--ad-white);
+  color: #754653;
   font-size: 12.5px;
   font-weight: 600;
   overflow: hidden;
@@ -358,7 +396,7 @@
 .ad-side-profile-text small {
   display: block;
   margin-top: 2px;
-  color: rgba(201, 155, 165, 0.85);
+  color: #9b7680;
   font-size: 10.5px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -371,15 +409,17 @@
   gap: 12px;
   padding: 10px 13px;
   border-radius: 11px;
-  color: #cbb7bc;
+  border: 1px solid transparent;
+  color: #755a62;
   font-size: 12.5px;
   white-space: nowrap;
-  transition: background-color 0.16s ease, color 0.16s ease;
+  transition: all 0.18s ease;
 }
 
 .ad-side-view:hover {
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--ad-white);
+  background: #F3E3E6;
+  color: #754653;
+  border-color: rgba(197, 161, 110, 0.45);
 }
 
 .ad-sidelogout {
@@ -388,21 +428,22 @@
   gap: 12px;
   width: 100%;
   padding: 10px 13px;
-  border: 1px solid rgba(217, 83, 93, 0.4);
+  border: 1px solid rgba(217, 83, 93, 0.35);
   border-radius: 11px;
   background: transparent;
-  color: #e7aab1;
+  color: #b5424d;
   font-family: var(--ad-font);
   font-size: 12.5px;
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: background-color 0.16s ease, border-color 0.16s ease;
+  transition: all 0.18s ease;
 }
 
 .ad-sidelogout:hover {
-  background: rgba(217, 83, 93, 0.16);
-  border-color: rgba(217, 83, 93, 0.62);
+  background: #fbedef;
+  border-color: #d9535d;
+  color: #a72f3a;
 }
 
 /* Sidebar ringkas (ikon saja) */
@@ -754,11 +795,10 @@
   gap: 28px;
   padding: clamp(26px, 4vw, 40px) clamp(24px, 4vw, 40px);
   border-radius: 20px;
-  background:
-    radial-gradient(1100px 420px at -12% -40%, rgba(201, 155, 165, 0.22), transparent 60%),
-    linear-gradient(118deg, var(--ad-plum) 0%, #453038 48%, var(--ad-burgundy) 118%);
-  color: var(--ad-white);
-  box-shadow: 0 24px 60px -34px rgba(46, 31, 36, 0.55);
+  background: linear-gradient(135deg, #ebd4da 0%, #D9AEB8 52%, #e3bcc5 100%);
+  color: #754653;
+  border: 1px solid #C5A16E;
+  box-shadow: 0 18px 40px -20px rgba(117, 70, 83, 0.28);
 }
 
 .ad-banner::after {
@@ -766,11 +806,11 @@
   position: absolute;
   inset: auto -40px -34px -40px;
   height: 88px;
-  border-top: 1.5px dashed rgba(201, 155, 165, 0.35);
+  border-top: 1.5px dashed rgba(197, 161, 110, 0.45);
   background: repeating-linear-gradient(
     -45deg,
     transparent 0 10px,
-    rgba(201, 155, 165, 0.07) 10px 20px
+    rgba(197, 161, 110, 0.08) 10px 20px
   );
   pointer-events: none;
 }
@@ -786,7 +826,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--ad-rose);
+  color: #8c5361;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2.6px;
@@ -798,12 +838,13 @@
   font-weight: 800;
   letter-spacing: -0.4px;
   line-height: 1.15;
+  color: #5d343f;
 }
 
 .ad-banner-text p {
   margin: 0;
   max-width: 480px;
-  color: rgba(247, 242, 239, 0.78);
+  color: #6f4953;
   font-size: 13.5px;
   line-height: 1.7;
 }
@@ -819,27 +860,32 @@
 }
 
 .ad-btn--onbanner {
-  background: var(--ad-white);
-  color: var(--ad-plum);
+  background: #754653;
+  color: #fffcf8;
+  border: 1px solid #C5A16E;
+  box-shadow: 0 8px 18px -8px rgba(117, 70, 83, 0.45);
 }
 
 .ad-btn--onbanner:hover:not(:disabled) {
-  background: var(--ad-beige);
-  color: var(--ad-plum);
-  box-shadow: 0 10px 22px -12px rgba(0, 0, 0, 0.45);
+  background: #603744;
+  color: #fffcf8;
+  border-color: #C5A16E;
+  box-shadow: 0 12px 24px -10px rgba(117, 70, 83, 0.55);
+  transform: translateY(-2px);
 }
 
 .ad-btn--bannerghost {
-  background: transparent;
-  border-color: rgba(255, 255, 255, 0.32);
-  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid #C5A16E;
+  color: #754653;
 }
 
 .ad-btn--bannerghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.5);
-  color: var(--ad-white);
-  box-shadow: none;
+  background: #fffcf8;
+  border-color: #754653;
+  color: #754653;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px -8px rgba(117, 70, 83, 0.25);
 }
 
 .ad-banner-art {
@@ -1038,9 +1084,10 @@
 }
 
 .ad-chart-filter--active {
-  background: var(--ad-burgundy);
-  color: var(--ad-white);
-  box-shadow: 0 6px 14px -8px rgba(138, 79, 93, 0.7);
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+  box-shadow: 0 4px 12px -4px rgba(117, 70, 83, 0.3) !important;
 }
 
 .ad-chart-svg {
@@ -2940,14 +2987,13 @@ textarea.ad-input {
   flex: none;
   margin-left: auto;
   border-radius: 50%;
-  background: #f0d5b3;
-  box-shadow: 0 0 10px rgba(240, 213, 179, 0.5);
+  background: #754653;
 }
 
 /* Profil admin */
 .ad-side-profile-text strong {
   display: block;
-  color: var(--ad-white);
+  color: #754653;
   font-size: 12.5px;
   font-weight: 600;
   overflow: hidden;
@@ -2960,19 +3006,19 @@ textarea.ad-input {
   display: grid;
   gap: 3px;
   padding: 12px 8px 0;
-  border-top: 1px solid rgba(201, 155, 165, 0.12);
+  border-top: 1px solid rgba(197, 161, 110, 0.25);
   text-align: center;
 }
 
 .ad-sidebar-copyright span {
-  color: rgba(255, 255, 255, 0.55);
+  color: #754653;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 
 .ad-sidebar-copyright small {
-  color: rgba(201, 155, 165, 0.65);
+  color: #9b7680;
   font-size: 10px;
 }
 
@@ -2983,15 +3029,15 @@ textarea.ad-input {
   height: 34px;
   flex: none;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(197, 161, 110, 0.35);
   border-radius: 9px;
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
+  background: rgba(117, 70, 83, 0.08);
+  color: #754653;
   cursor: pointer;
 }
 
 .ad-sidebar-close:hover {
-  background: rgba(255, 255, 255, 0.14);
+  background: #F3E3E6;
 }
 
 /* Notifikasi kosong */
@@ -3434,7 +3480,6 @@ textarea.ad-input {
   min-width: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
-
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent !important;
@@ -3443,66 +3488,184 @@ textarea.ad-input {
 
 /* Login form layout */
 .ad-login-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 20px;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  gap: 20px !important;
 }
 
 .ad-login-form .ad-field {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-width: 0;
-  gap: 8px;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  gap: 7px !important;
 }
 
 .ad-login-form .ad-field > span:first-child {
-  display: block;
+  display: block !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #3d2b30 !important;
+  letter-spacing: 0.15px !important;
 }
 
-/* Input tidak boleh melewati lebar kartu */
+/* Input styling */
 .ad-login-form .ad-input {
-  display: block;
+  display: block !important;
   width: 100% !important;
-  max-width: 100%;
-  min-width: 0;
-  min-height: 48px;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
   box-sizing: border-box !important;
+  padding: 12px 16px !important;
+  border: 1.5px solid #e3d7d2 !important;
+  border-radius: 12px !important;
+  background: #fbf9f8 !important;
+  color: #2b1f23 !important;
+  font-size: 14px !important;
+  font-family: inherit !important;
+  transition: border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease !important;
+}
+
+.ad-login-form .ad-input::placeholder {
+  color: #a89895 !important;
+  font-size: 13px !important;
+}
+
+.ad-login-form .ad-input:focus {
+  outline: none !important;
+  border-color: #8a4f5d !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(138, 79, 93, 0.12) !important;
+}
+
+.ad-login-form .ad-input[aria-invalid="true"] {
+  border-color: #d9535d !important;
+  background: #fff8f8 !important;
+}
+
+.ad-login-form .ad-input[aria-invalid="true"]:focus {
+  box-shadow: 0 0 0 4px rgba(217, 83, 93, 0.14) !important;
 }
 
 /* Password input dan tombol mata */
 .ad-login-form .ad-password {
-  display: flex;
-  position: relative;
-  width: 100%;
-  min-width: 0;
+  display: flex !important;
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  align-items: center !important;
 }
 
 .ad-login-form .ad-password .ad-input {
-  flex: 1;
-  padding-right: 48px;
+  flex: 1 1 auto !important;
+  padding-right: 48px !important;
 }
 
 .ad-login-form .ad-password-toggle {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute !important;
+  right: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 8px !important;
+  color: #9a868b !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease, background-color 0.15s ease !important;
 }
 
-/* Tombol login */
+.ad-login-form .ad-password-toggle:hover {
+  color: #8a4f5d !important;
+  background: rgba(138, 79, 93, 0.08) !important;
+}
+
+/* Error field */
+.ad-login-form .ad-field-error {
+  color: #d9535d !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  margin-top: 2px !important;
+  line-height: 1.4 !important;
+}
+
+/* Banner error alert */
+.ad-login-form .auth-error {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #f0ccd0 !important;
+  border-radius: 11px !important;
+  background: #fdf2f3 !important;
+  color: #9c2e39 !important;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+.ad-login-form .auth-error svg {
+  flex: 0 0 16px !important;
+  margin-top: 1px !important;
+}
+
+/* Notice alert */
+.ad-login-notice {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #c9e0cf !important;
+  border-radius: 11px !important;
+  background: #eef7f1 !important;
+  color: #1b6339 !important;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+  margin-bottom: 20px !important;
+}
+
+/* Tombol submit login */
 .ad-login-submit {
-  width: 100%;
-  min-height: 48px;
-  justify-content: center;
-  box-sizing: border-box;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  width: 100% !important;
+  min-height: 48px !important;
+  margin-top: 4px !important;
+  padding: 13px 24px !important;
+  border: none !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #8a4f5d 0%, #6d3945 100%) !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px !important;
+  cursor: pointer !important;
+  box-shadow: 0 10px 22px -6px rgba(138, 79, 93, 0.42) !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease !important;
 }
 
-/* Pesan bantuan */
-.ad-login-help {
-  margin-top: 20px;
-  line-height: 1.7;
+.ad-login-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #78424e 0%, #5e303a 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 14px 28px -6px rgba(138, 79, 93, 0.52) !important;
+}
+
+.ad-login-submit:active:not(:disabled) {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 10px -2px rgba(138, 79, 93, 0.3) !important;
+}
+
+.ad-login-submit:disabled {
+  opacity: 0.65 !important;
+  cursor: not-allowed !important;
 }
 
 /* Responsif HP */
@@ -3767,4 +3930,212 @@ textarea.ad-input {
   width: 42px;
   height: 42px;
   flex-basis: 42px;
+}
+
+/* =========================================================
+   DASHBOARD COLOR PALETTE: BLUSH PINK + BURGUNDY + GOLD
+   (Sesuai Gambar 2: Background #D9AEB8, Teks #754653, Border #C5A16E)
+   ========================================================= */
+
+/* SIDEBAR LUXURY BOUTIQUE THEME */
+.ad-sidebar {
+  background: linear-gradient(180deg, #FBF6F7 0%, #F5EAEF 60%, #EFE1E6 100%) !important;
+  color: #755a62 !important;
+  border-right: 1px solid rgba(197, 161, 110, 0.4) !important;
+}
+
+.ad-brand-text strong,
+.ad-brand-text b {
+  color: #754653 !important;
+}
+
+.ad-brand-text small {
+  color: #9b7680 !important;
+}
+
+.ad-side-label {
+  color: #9b7680 !important;
+}
+
+.ad-side-label svg {
+  color: #C5A16E !important;
+}
+
+/* MENU INACTIVE */
+.ad-sidelink {
+  color: #755a62 !important;
+  border: 1px solid transparent !important;
+  transition: all 0.2s ease !important;
+}
+
+.ad-sidelink svg {
+  color: #8c6a73 !important;
+  transition: all 0.2s ease !important;
+}
+
+/* MENU HOVER */
+.ad-sidelink:not(.ad-sidelink--active):hover {
+  background: #F3E3E6 !important;
+  color: #754653 !important;
+  border-color: rgba(197, 161, 110, 0.45) !important;
+  transform: translateX(3px) !important;
+}
+
+.ad-sidelink:not(.ad-sidelink--active):hover svg {
+  color: #754653 !important;
+  stroke: #754653 !important;
+}
+
+/* MENU ACTIVE */
+.ad-sidelink--active {
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 14px -3px rgba(117, 70, 83, 0.28) !important;
+  transform: none !important;
+}
+
+.ad-sidelink--active svg {
+  color: #754653 !important;
+  stroke: #754653 !important;
+}
+
+/* MENU ACTIVE HOVER */
+.ad-sidelink--active:hover {
+  background: #EBCFD5 !important;
+  color: #754653 !important;
+  border-color: #C5A16E !important;
+  box-shadow: 0 6px 18px -3px rgba(117, 70, 83, 0.35) !important;
+}
+
+.ad-sidelink--active:hover svg {
+  color: #754653 !important;
+  stroke: #754653 !important;
+}
+
+.ad-sidelink-indicator {
+  background: #754653 !important;
+}
+
+/* SIDEBAR FOOTER / PROFILE */
+.ad-sidefoot {
+  border-top: 1px solid rgba(197, 161, 110, 0.3) !important;
+}
+
+.ad-side-profile {
+  background: #ffffff !important;
+  border: 1px solid rgba(197, 161, 110, 0.35) !important;
+}
+
+.ad-side-avatar {
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+}
+
+.ad-side-profile-text strong,
+.ad-side-profile-text b {
+  color: #754653 !important;
+}
+
+.ad-side-profile-text small {
+  color: #9b7680 !important;
+}
+
+.ad-side-view {
+  color: #755a62 !important;
+}
+
+.ad-side-view:hover {
+  background: #F3E3E6 !important;
+  color: #754653 !important;
+  border-color: rgba(197, 161, 110, 0.45) !important;
+}
+
+.ad-sidelogout {
+  border: 1px solid rgba(217, 83, 93, 0.35) !important;
+  color: #b5424d !important;
+}
+
+.ad-sidelogout:hover {
+  background: #fbedef !important;
+  border-color: #d9535d !important;
+  color: #a72f3a !important;
+}
+
+.ad-sidebar-copyright span {
+  color: #754653 !important;
+}
+
+.ad-sidebar-copyright small {
+  color: #9b7680 !important;
+}
+
+.ad-btn:not(.ad-btn--ghost):not(.ad-btn--danger):not(.ad-btn--soft):not(.ad-btn--onbanner):not(.ad-btn--bannerghost) {
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+}
+
+.ad-btn:not(.ad-btn--ghost):not(.ad-btn--danger):not(.ad-btn--soft):not(.ad-btn--onbanner):not(.ad-btn--bannerghost):hover:not(:disabled) {
+  background: #EBCFD5 !important;
+  color: #754653 !important;
+  border-color: #C5A16E !important;
+}
+
+.ad-btn:not(.ad-btn--ghost):not(.ad-btn--danger):not(.ad-btn--soft):not(.ad-btn--onbanner):not(.ad-btn--bannerghost) svg {
+  color: #754653 !important;
+  stroke: #754653 !important;
+}
+
+.ad-banner {
+  background: linear-gradient(135deg, #ebd4da 0%, #D9AEB8 52%, #e3bcc5 100%) !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
+  box-shadow: 0 18px 40px -20px rgba(117, 70, 83, 0.28) !important;
+}
+
+.ad-banner-text h2 {
+  color: #5d343f !important;
+}
+
+.ad-banner-eyebrow {
+  color: #8c5361 !important;
+}
+
+.ad-banner-text p {
+  color: #6f4953 !important;
+}
+
+.ad-btn--onbanner {
+  background: #754653 !important;
+  color: #fffcf8 !important;
+  border: 1px solid #C5A16E !important;
+  box-shadow: 0 8px 18px -8px rgba(117, 70, 83, 0.45) !important;
+}
+
+.ad-btn--onbanner:hover:not(:disabled) {
+  background: #603744 !important;
+  color: #fffcf8 !important;
+  border-color: #C5A16E !important;
+  box-shadow: 0 12px 24px -10px rgba(117, 70, 83, 0.55) !important;
+}
+
+.ad-btn--bannerghost {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid #C5A16E !important;
+  color: #754653 !important;
+}
+
+.ad-btn--bannerghost:hover:not(:disabled) {
+  background: #fffcf8 !important;
+  border-color: #754653 !important;
+  color: #754653 !important;
+}
+
+.ad-chart-filter--active {
+  background: #D9AEB8 !important;
+  color: #754653 !important;
+  border: 1px solid #C5A16E !important;
 }

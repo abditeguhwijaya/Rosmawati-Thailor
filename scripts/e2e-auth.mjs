@@ -90,6 +90,7 @@ async function fillLogin(page, password) {
     .click();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function login(page, password = ADMIN_PASSWORD) {
   await openLogin(page);
   await fillLogin(page, password);
